@@ -3,6 +3,8 @@ import "./App.css";
 import Banner from "./Banner/Banner";
 import Navbar from "./Navbar/Navbar";
 import Tickets from "./Tickets/Tickets";
+ import { ToastContainer} from 'react-toastify';
+import Footer from "./Footer/Footer";
 
 const fetchTickets = fetch("../public/Tickets.json").then((res) => res.json());
 
@@ -35,6 +37,10 @@ function App() {
           fetchTickets={fetchTickets}
         ></Tickets>
       </Suspense>
+
+      <Footer></Footer>
+
+      <ToastContainer></ToastContainer>
     </>
   );
 }

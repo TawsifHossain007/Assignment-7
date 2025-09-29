@@ -1,16 +1,25 @@
-import React from "react";
+import { toast } from "react-toastify";
 
 const Ticket = ({ ticket, taskStatus, setTaskStatus }) => {
   const isSelected = taskStatus.find((t) => t.id === ticket.id);
-  const handleAddtoTaskStatus = (ticket) => {
+
+  const handleAddtoTaskStatus = () => {
     if (!isSelected) {
       setTaskStatus([...taskStatus, ticket]);
+      toast("Ticket added to Task Status");
     }
   };
+
   return (
     <div
-      onClick={() => handleAddtoTaskStatus(ticket)}
-      className="bg-white p-4 rounded-[4px] shadow-md cursor-pointer hover:bg-gray-100"
+      onClick={isSelected ? undefined : handleAddtoTaskStatus}
+      className={`p-4 rounded-[4px] shadow-md cursor-pointer 
+        ${
+          isSelected
+            ? "bg-gray-200 cursor-not-allowed opacity-70"
+            : "bg-white hover:bg-gray-100"
+        }
+      `}
     >
       <div className="flex items-center justify-between">
         <h1 className="text-[18px] font-medium">{ticket.title}</h1>
@@ -32,15 +41,16 @@ const Ticket = ({ ticket, taskStatus, setTaskStatus }) => {
           <span>{ticket.status}</span>
         </div>
       </div>
+
       <p className="text-[#627382] mt-4">{ticket.description}</p>
+
       <div className="flex items-center justify-between mt-4">
         <p className="text-[#627382]">#{ticket.id}</p>
         <p
           className={`text-[14px] font-medium
           ${ticket.priority === "High Priority" ? "text-red-600" : ""}
           ${ticket.priority === "Medium Priority" ? "text-yellow-600" : ""}
-          ${ticket.priority === "Low Priority" ? "text-green-600" : ""}
-          `}
+          ${ticket.priority === "Low Priority" ? "text-green-600" : ""}`}
         >
           {ticket.priority}
         </p>

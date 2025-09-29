@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const StatusCard = ({
   removeFromTickets,
   ticket,
@@ -7,6 +9,7 @@ const StatusCard = ({
   const handleRemove = () => {
     removeFromTickets(ticket);
     setResolvedTask([...resolvedTask, ticket]);
+    toast("Task marked as Resolved");
   };
   return (
     <div className="bg-white p-4 rounded-[4px] shadow-md mb-4 ">
