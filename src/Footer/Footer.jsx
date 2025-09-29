@@ -2,8 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='flex items-center justify-between mt-20 p-20 text-white bg-[#000000]'>
-            <div>
+        <div className='bg-[#000000]'>
+            <div className='flex items-center justify-between mt-20 p-20 text-white max-w-[1400px] mx-auto'>
+                <div>
                 <h1>CS — Ticket System</h1>
                 <p className='text-[#a1a1aa]'>Lorem Ipsum is simply dummy text of the <br /> printing and typesetting industry. Lorem <br /> Ipsum has been the industry's standard <br /> dummy text ever since the 1500s, when an <br /> unknown printer took a galley of type and <br /> scrambled it to make a type specimen book.</p>
             </div>
@@ -32,6 +33,11 @@ const Footer = () => {
                  <a className='text-[#a1a1aa]' href=""><i class="fa-brands bg-white h-[22px] w-[45px] p-1 text-black rounded-full fa-facebook"></i>  @CS — Ticket System</a>
                  <a className='text-[#a1a1aa]' href=""><i class="fa-solid bg-white h-[22px] w-[45px] p-1 text-black rounded-full fa-envelope"></i>  support@cst.com</a>
             </div>
+            </div>
+            <div className='text-center p-4 text-white border-t border-t-gray-600 bg-[#000000] max-w-[1200px] mx-auto'>
+                <p>© 2025 CS — Ticket System. All rights reserved.</p>
+            </div>
+            
         </div>
     );
 };
