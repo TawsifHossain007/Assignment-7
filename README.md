@@ -1,16 +1,14 @@
-# React + Vite
+Ques-1-Ans,
+JSX is Javascript XML. It's a syntax extension that lets us write html like code in javascript to make the process smoother.It's easier to read and understand. It uses virtual DOM so it makes it faster. Maintaining and Using Components are way easier than usual
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ques-2-Ans,
+Props is used as input to a component. Props are passed from parent to child components. The child components can't modify these. And States are mutable by the components. We can also pass states as props to a component. States are mainly used to track changes.
 
-Currently, two official plugins are available:
+Ques-3-Ans,
+useState is a hook that lets us change the data through states to in the components. It lets the components store data and change it and that results in re-rendering the component.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ques-4-Ans,
+We can share states as props to the closest parent components and then share it to the sibling components. We can also use props drilling to share states. Also Context API and State Management Lib methods can be used.
 
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Ques-5-Ans,
+We can use a function and then call it as onclick to to the eventHandling part. We can also write an alert or toast or any other execution directly to onclick to it.Also onChange, OnSubmit and etc can be used too.
