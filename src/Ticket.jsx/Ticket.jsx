@@ -1,8 +1,11 @@
 import React from "react";
 
 const Ticket = ({ ticket, taskStatus, setTaskStatus }) => {
+  const isSelected = taskStatus.find((t) => t.id === ticket.id);
   const handleAddtoTaskStatus = (ticket) => {
-    setTaskStatus([...taskStatus, ticket]);
+    if (!isSelected) {
+      setTaskStatus([...taskStatus, ticket]);
+    }
   };
   return (
     <div

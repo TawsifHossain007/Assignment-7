@@ -7,13 +7,17 @@ import Tickets from "./Tickets/Tickets";
 const fetchTickets = fetch("../public/Tickets.json").then((res) => res.json());
 
 function App() {
-
   const [taskStatus, setTaskStatus] = useState([]);
+  const [resolvedTask, setResolvedTask] = useState([]);
+
+  const removeTicket = (ticket) => {
+    setTaskStatus(taskStatus.filter((t) => t.title !== ticket.title));
+  };
 
   return (
     <>
       <Navbar></Navbar>
-      <Banner taskStatus={taskStatus}></Banner>
+      <Banner resolvedTask={resolvedTask} taskStatus={taskStatus}></Banner>
 
       <Suspense
         fallback={
@@ -22,7 +26,14 @@ function App() {
           </div>
         }
       >
-        <Tickets taskStatus={taskStatus} setTaskStatus={setTaskStatus} fetchTickets={fetchTickets}></Tickets>
+        <Tickets
+          removeTicket={removeTicket}
+          resolvedTask={resolvedTask}
+          setResolvedTask={setResolvedTask}
+          taskStatus={taskStatus}
+          setTaskStatus={setTaskStatus}
+          fetchTickets={fetchTickets}
+        ></Tickets>
       </Suspense>
     </>
   );
